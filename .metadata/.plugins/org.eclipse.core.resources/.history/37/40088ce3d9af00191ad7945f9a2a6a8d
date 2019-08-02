@@ -1,0 +1,34 @@
+package com.practise.java.lambdaExample;
+
+
+interface Lambda{
+	void show();
+}
+
+interface Lambda1{
+	int add(int i, int j);
+}
+
+
+public class LambdaExample3 {
+
+	public void display(Lambda1 l) {
+		System.out.println(l);
+	}
+	public static void main(String[] args) {
+		
+		Lambda a = () -> System.out.println("Show from LambdaExample1");
+
+		Lambda1 b =  (int i, int j) -> i + j;
+		
+		System.out.println(b.add(5, 6));
+		
+		Lambda1 innerLambda = new Lambda1() {
+			public int add(int x, int y) {
+				return x+y;
+			}
+		};
+		System.out.println(innerLambda.add(5, 6));
+	}
+
+}
